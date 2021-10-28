@@ -7,6 +7,55 @@ Below you will find a set of tasks for you to complete to set up a databases of 
 To submit this homework write the correct commands for each question here:
 
 ```sql
+create database cyf_classes owner postgres;
+
+CREATE TABLE mentors(
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+yearsInGlasgow int,
+address VARCHAR(120),
+favProgramLanguage VARCHAR(100)
+);
+
+INSERT INTO mentors (name, yearsinglasgow, address, favprogramlanguage) VALUES ('Jesús C.', 1, 'Barcelona', 'php');
+INSERT INTO mentors (name, yearsinglasgow, address, favprogramlanguage) VALUES ('Pedro A.', 2, 'Francia', 'java');
+INSERT INTO mentors (name, yearsinglasgow, address, favprogramlanguage) VALUES ('Juan B.', 3, 'Suiza', 'JavaScript');
+INSERT INTO mentors (name, yearsinglasgow, address, favprogramlanguage) VALUES ('Arturo D', 4, 'Portugal', 'C');
+INSERT INTO mentors (name, yearsinglasgow, address, favprogramlanguage) VALUES ('Ronaldo E.', 5, 'Brasil', 'C++');
+
+CREATE TABLE students(
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+address VARCHAR(120),
+graduated BOOL
+);
+
+INSERT INTO students (name, address, graduated) VALUES ('Ronald M', 'Sevilla', 'true');
+INSERT INTO students (name, address, graduated) VALUES ('Ramon M', 'Portugal', 'true');
+INSERT INTO students (name, address, graduated) VALUES ('Carlos M', 'Francia', 'true');
+INSERT INTO students (name, address, graduated) VALUES ('Maria M', 'Rusia', 'true');
+INSERT INTO students (name, address, graduated) VALUES ('Wendy M', 'Alemania', 'false');
+INSERT INTO students (name, address, graduated) VALUES ('Eduard M', 'Inglaterra', 'false');
+INSERT INTO students (name, address, graduated) VALUES ('Emma M', 'Canarias', 'false');
+INSERT INTO students (name, address, graduated) VALUES ('Jose M', 'Suiza', 'false');
+INSERT INTO students (name, address, graduated) VALUES ('Marcos M', 'Noruega', 'false');
+INSERT INTO students (name, address, graduated) VALUES ('Cristian M', 'Moldavia', 'false');
+
+SELECT * FROM mentors;
+SELECT * FROM students;
+
+CREATE TABLE classes(
+id SERIAL PRIMARY KEY,
+leadingmentor VARCHAR(50) NOT NULL,
+topic VARCHAR(120) NOT NULL,
+date DATE NOT NULL,
+location VARCHAR(30) NOT NULL
+);
+
+INSERT INTO classes (leadingmentor, topic, date, location) VALUES ('Bernardo A.', 'JavaScript', '2019/06/22', 'Alemania');
+INSERT INTO classes (leadingmentor, topic, date, location) VALUES ('Ramon B.', 'C++', '2020/01/15', 'Barcelona');
+INSERT INTO classes (leadingmentor, topic, date, location) VALUES ('Echenique P.', 'Python', '2021/07/01', 'Madrid');
+
 
 
 ```
