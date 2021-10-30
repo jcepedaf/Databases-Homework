@@ -56,6 +56,14 @@ INSERT INTO classes (leadingmentor, topic, date, location) VALUES ('Bernardo A.'
 INSERT INTO classes (leadingmentor, topic, date, location) VALUES ('Ramon B.', 'C++', '2020/01/15', 'Barcelona');
 INSERT INTO classes (leadingmentor, topic, date, location) VALUES ('Echenique P.', 'Python', '2021/07/01', 'Madrid');
 
+ALTER TABLE students ADD COLUMN class_id int;
+ALTER TABLE students add foreign key(class_id) references classes (id);
+
+
+SELECT * FROM mentors WHERE yearsinglasgow > 5;
+SELECT * FROM mentors WHERE favprogramlanguage = 'JavaScript';
+SELECT * FROM students WHERE graduated = 'true';
+
 
 
 ```
